@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    margin: 50px auto;
+}
+
+input {
+    padding: 8px;
+    width: 180px;
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;   /*isey addd wala button pa jakar cursor hand typebanjayege jisey pta lgega clickable button hai */
+}
+
+li {
+    margin: 10px 0;
+}
+
+.delete {
+    margin-left: 10px;
+}
