@@ -1,23 +1,161 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f4f4f4;
+  --border: #dddddd;
+  --accent: #4a7dff;
+  --danger: #e0554f;
+}
+
+/* dark mode ke liye alag colors, body pa "dark" class lagne pa yeh apply honge */
+body.dark {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --card: #1e1e1e;
+  --border: #333333;
+  --accent: #6d9bff;
+  --danger: #ff6b64;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    width: 300px;
-    margin: 50px auto;
+  font-family: Arial, sans-serif;
+  width: 320px;
+  margin: 50px auto;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;   /* dark mode smoothly change ho isliye */
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#themeBtn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.extra-row {
+  justify-content: space-between;
 }
 
 input {
-    padding: 8px;
-    width: 180px;
+  padding: 8px;
+  width: 180px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+#timeInput {
+  width: 110px;
+}
+
+select {
+  padding: 8px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
 button {
-    padding: 8px;
-    cursor: pointer;   /*isey addd wala button pa jakar cursor hand typebanjayege jisey pta lgega clickable button hai */
+  padding: 8px;
+  cursor: pointer;   /*isey addd wala button pa jakar cursor hand typebanjayege jisey pta lgega clickable button hai */
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+}
+
+#addBtn {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin: 14px 0 6px;
+}
+
+.filterBtn {
+  flex: 1;
+  background: var(--card);
+  color: var(--text);
+  font-size: 12px;
+  padding: 6px;
+}
+
+.filterBtn.active {
+  background: var(--accent);
+  color: #fff;
 }
 
 li {
-    margin: 10px 0;
+  margin: 10px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
 }
 
+li.done .taskText {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.taskText {
+  flex: 1;
+  word-break: break-word;
+  cursor: pointer;   /* task pa click karke done/undone toggle hota hai */
+}
+
+.taskTime {
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.priorityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.priority-low { background: #4caf50; }
+.priority-medium { background: #f0a020; }
+.priority-high { background: var(--danger); }
+
 .delete {
-    margin-left: 10px;
+  margin-left: 10px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  font-size: 11px;
+}
+
+#taskCount {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
 }

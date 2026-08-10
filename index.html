@@ -8,18 +8,35 @@
 </head>
 <body>
 
-  <h2>To-Do App</h2>
+  <div class="app-header">
+    <h2>To-Do App</h2>
+    <button id="themeBtn" title="Toggle dark mode">🌙</button>   <!-- dark mode wala button -->
+  </div>
 
-  <input type="text" id="taskInput" placeholder="Enter Task">    //user  sa input leta hai text ki jaagah pa user jo likhta hai woh aataa is input ka unique name hai js id ko pkdti hai ..
-  place holder woh hota hai jo likhna sa phle box ma dikhta rhta hai kuch likhta hi hat jataaa 
+  <div class="input-row">
+    <input type="text" id="taskInput" placeholder="Enter Task">   <!-- user sa input leta hai text ki jaagah pa user jo likhta hai woh aataa is input ka unique name hai js id ko pkdti hai .. place holder woh hota hai jo likhna sa phle box ma dikhta rhta hai kuch likhta hi hat jataaa -->
+  </div>
 
+  <div class="input-row extra-row">
+    <input type="time" id="timeInput" title="Set a time (optional)">   <!-- task ka time, ye optional hai -->
+    <select id="priorityInput" title="Set priority">                  <!-- priority chunne ke liye -->
+      <option value="low">Low</option>
+      <option value="medium" selected>Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
 
+  <button id="addBtn">Add</button>   <!-- button of add -->
 
+  <div class="filters">
+    <button class="filterBtn active" data-filter="all">All</button>
+    <button class="filterBtn" data-filter="active">Active</button>
+    <button class="filterBtn" data-filter="done">Done</button>
+  </div>
 
-  <button id="addBtn">Add</button>   // button of add
+  <ul id="taskList"></ul>   <!-- undorderd list bullet point wali list banti ha isey -->
 
-  <ul id="taskList"></ul> // undorderd list bullet point wali list banti ha isey
-  
+  <p id="taskCount"></p>   <!-- kitne task bache hain, ye dikhayega -->
 
   <script src="script.js"></script>
 </body>
